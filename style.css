@@ -95,18 +95,12 @@ p{
   left: 0;
   min-width: 100vw;
   min-height: 100vh;
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
+  width: auto;
+  height: auto;
   z-index: -1;
+  object-fit: cover;
+  object-position: center center; 
   background: black;
-}
-@media (max-width: 600px) {
-  #bgVideo {
-    width: 100vw;
-    height: 100vh;
-    object-fit: contain;
-  }
 }
 label[for="city"] {
     color: white;
