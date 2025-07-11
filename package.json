@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "cypress": "^14.5.1",
+    "jest": "^30.0.3",
+    "jest-environment-jsdom": "^30.0.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "start": "npx serve ."
+  }
+}
