@@ -105,7 +105,15 @@ function showWeatherVideo(weatherId) {
 
     bgSource.src = videoFile;
     bgVideo.load();
-    bgVideo.play();
+    
+    // Handle video play promise to prevent uncaught errors
+    const playPromise = bgVideo.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            // Auto-play was prevented or interrupted
+            console.log('Video play was prevented:', error);
+        });
+    }
 }
 
 // Browser-only code
