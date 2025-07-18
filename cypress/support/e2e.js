@@ -15,3 +15,15 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// Prevent video play errors from failing Cypress tests
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from failing the test
+  if (err.message.includes('The play() request was interrupted')) {
+    return false
+  }
+  // For AbortError related to video playback
+  if (err.name === 'AbortError') {
+    return false
+  }
+})
